@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact page | Project Opdracht</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link
+      href="https://unpkg.com/css.gg@2.0.0/icons/css/heart.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/animation.css" />
+    <link rel="icon" type="image/x-icon" href="./Assets/icons/map-marker.png" />
+    <script src="./JavaScript/leaflet.js" defer></script>
+    <script src="./JavaScript/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.27/bundled/lenis.min.js"></script>
+  </head>
+  <body>
+    <div class="sales-banner slide-bottom">
+      <a href="./shop.html">Promo code WEBTECH30 +30% op jouw punten</a>
+    </div>
+    <header class="slide-bottom">
+      <nav class="test1">
+        <a href="./index.html">home</a>
+        <a href="./shop.html">shop</a>
+        <a href="./contact.html" class="active">contact</a>
+        <a href="./klant.html">klanten</a>
+      </nav>
+      <a class="logo-container" href="./index.html">
+        <img src="./Assets/icons/logo-final.png" class="logo" alt="logo" />
+      </a>
+      <nav class="test2">
+        <from action="#">
+          <input class="search" type="text" name="" id="" />
+        </from>
+        <a href=""><img src="./Assets/icons/account.png" alt="" /></a>
+        <a href=""><img src="./Assets/icons/cart.png" alt="" /></a>
+      </nav>
+      <nav class="mobile">
+        <a href="#"
+          ><img
+            src="./Assets/icons/2976215.png"
+            alt="hamburger-menu"
+            id="hamburger"
+        /></a>
+      </nav>
+    </header>
+
+    <header class="mobile-menu" id="mobile-menu">
+      <nav>
+        <section class="mobile-item" onclick="location.href='./index.html'">
+          <a href="./index.html" class="active">home</a>
+        </section>
+
+        <section class="mobile-item" onclick="location.href='./shop.html'">
+          <a href="./shop.html">winkel</a>
+        </section>
+
+        <section class="mobile-item" onclick="location.href='./contact.html'">
+          <a href="./contact.html">contact</a>
+        </section>
+        <section class="mobile-item" onclick="location.href='./contact.html'">
+          <a href="./klant.html">klanten</a>
+        </section>
+      </nav>
+    </header>
+    <main class="contact-main">
+      <section class="contact-p">
+        <article class="form-contact">
+          <h2>Contact us !</h2>
+          <form action="">
+            <div class="input-txt">
+              <input type="text" placeholder="First-name" required />
+            </div>
+            <div class="input-txt">
+              <input type="text" placeholder="Last-name" required />
+            </div>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="E-mail"
+              required
+            />
+            <br />
+            <textarea placeholder="Message" required></textarea>
+            <br />
+            <button class="shop-btn" type="submit">Send</button>
+            <button class="shop-btn" type="reset">Reset</button>
+            <br />
+          </form>
+        </article>
+
+        <article class="contact-image2"></article>
+      </section>
+      <section class="map">
+        <h2>Visit our store !</h2>
+        <div id="map"></div>
+      </section>
+      <section class="bottom-section">
+        <article class="newsletter2">
+          <h2>Stay informed !</h2>
+          <form action="">
+            <input
+              class="nl-input"
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              required
+            />
+            <br />
+            <input class="nl-button" type="submit" value="Send !" />
+          </form>
+        </article>
+        <div class="img-bottom"></div>
+      </section>
+    </main>
+    <footer>
+      <section class="footer-1">
+        <p>©ontempo | 2023</p>
+      </section>
+      <section class="footer-2">
+        <img src="./Assets/icons/github.png" alt="" />
+        <img src="./Assets/icons/behance.png" alt="" />
+        <img src="./Assets/icons/mail.png" alt="" />
+      </section>
+    </footer>
+  </body>
+</html>
