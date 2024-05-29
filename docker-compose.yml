@@ -1,44 +1,20 @@
-version: "3"
-services:
-  app:
-    # Pad naar dockerfile.
-    # '.' vertegenwoordigt de huidige map waarin
-    # docker-compose.yml aanwezig is.
-    build: .
-
-    # Mapping van containerpoort naar host
-    ports:
-      - "5000:5000"
-
-    # Link database container naar app container voor bereikbaarheid.
-    # Dit is enkel noodzakelijk wanneer je containers expliciet opdeelt in netwerken.
-    # Anders kunnen containers elkaar sowieso bereiken.
-    # Hier is het dus niet strikt noodzakelijk.
-    links:
-      - database
-
-    # Start deze container pas op als de andere gestart is
-    depends_on:
-      - database
-
-  database:
-    # image om te halen van Docker Hub
-    # dit is een veelgebruikte opslagplaats voor kant-en-klare images
-    image: mysql/mysql-server:5.7
-
-    # Omgevingsvariabelen voor opstartscript
-    # Container zal deze variabelen gebruiken om de container te starten.
-    environment:
-      - "MYSQL_ROOT_PASSWORD=root"
-      - "MYSQL_USER=testuser"
-      - "MYSQL_PASSWORD=admin123"
-      - "MYSQL_DATABASE=backend"
-
-    # de databankgegevens worden opgeslagen in het volume db
-    # onder de map /data/db
-    volumes:
-      - db:/data/db
-
-# benoemde volumes die onze gegevens levend houden na opnieuw opstarten.
+version: "3.8"
 volumes:
+  mymariadbdata: ~
+  php: ~
+services:
+  apache1:
+    ports:
+      - 8080:80
+    image: hamzaChl/projectopdracht:latest
+    volumes:
+      - php:/var/www/html
   db:
+    image: mariadb:latest
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      - MARIADB_ROOT_PASSWORD=password
+    volumes:
+      - mymariadbdata:/var/lib/mysql
