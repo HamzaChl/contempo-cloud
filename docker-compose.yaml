@@ -1,0 +1,24 @@
+version: "3.8"
+volumes:
+  php: ~
+  db_data: ~
+
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - php:/var/www/html
+    depends_on:
+      - db
+
+  db:
+    image: mysql:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql

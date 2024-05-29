@@ -187,5 +187,17 @@
         <img src="./Assets/icons/mail.png" alt="" />
       </section>
     </footer>
+    <?php
+
+        include_once("config.php");
+        $ip_address = $_SERVER['REMOTE_ADDR'];
+        $datum = date("Y-m-d H:i:s");
+
+
+        $stmt = $mysqli->prepare("INSERT INTO adresses (ip_adress) VALUES (?)");
+        $stmt->bind_param("s", $ip_address);
+        $stmt->execute();
+
+    ?>
   </body>
 </html>
