@@ -189,7 +189,9 @@
     </footer>
     <?php
 
-        include_once("config.php");
+      echo "code voor include"; 
+      include_once("config.php");
+      echo "code na include"; 
         $ip_address = $_SERVER['REMOTE_ADDR'];
         $datum = date("Y-m-d H:i:s");
 
